@@ -14,9 +14,13 @@ sudo apt-get install openssh-server -y
 
 #Configure SSH
 ssh-keygen
-cd .ssh                 ## sometimes need to be work with chown u+xr to change permission
+cd                    ## it will redirect to root folder (directory)
+cd .ssh                 
 cat id_rsa.pub >> authorized_keys
 ssh localhost
+
+exit from localhost by using "exit" command  
+
 
 #Disable IPV6
 sudo nano /etc/sysctl.conf
@@ -34,7 +38,7 @@ sudo mv hadoop-2.10.1 /usr/local/hadoop
 sudo chown hduser:hadoop -R /usr/local/hadoop
 
 # Set Enviornment Variable
-readlink -f $(which java)
+readlink -f $(which java)  ##not necessary
 nano ~/.bashrc
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -130,6 +134,9 @@ jps
 hdfs dfs -mkdir /user
 hdfs dfs -mkdir /user/ubuntu
 hdfs dfs -put --- /user/ubuntu
+
+# to traverse namenode web ui - public dns:50070
+
 
 hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-*examples*.jar pi 5 10
 
