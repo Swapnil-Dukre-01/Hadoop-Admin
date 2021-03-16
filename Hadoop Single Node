@@ -41,7 +41,7 @@ sudo chown hduser:hadoop -R /usr/local/hadoop
 readlink -f $(which java)  ##not necessary
 nano ~/.bashrc
 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64   // it may give you an error No Such file or directory // so be aware about JAVA Version.
 export HADOOP_HOME=/usr/local/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin
 export PATH=$PATH:$HADOOP_HOME/sbin
